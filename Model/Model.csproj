@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <RootNamespace>Manuel</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DiffLib" Version="2017.7.26.1241" />
+    <PackageReference Include="DiffPlex" Version="1.4.3" />
+  </ItemGroup>
+
+</Project>

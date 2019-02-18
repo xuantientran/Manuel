@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfTest.HierarchicalDataTempl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTest"
+        mc:Ignorable="d"
+        Title="HierarchicalDataTempl" Height="450" Width="800">
+	<Grid>
+		<TreeView
+			ItemsSource="{Binding Tags}"
+			>
+			<TreeView.ItemTemplate>
+				<HierarchicalDataTemplate
+					ItemsSource="{Binding Children}">
+					<Grid>
+						<!-- Number of columns -->
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="2*"/>
+						</Grid.ColumnDefinitions>
+						<!-- Controls to use in the treeview grid -->
+						<TextBlock Text="{Binding Title}" Grid.Column="0"/>
+						<TextBlock Text="{Binding Title}" Grid.Column="1"/>
+					</Grid>
+				</HierarchicalDataTemplate>
+			</TreeView.ItemTemplate>
+		</TreeView>
+	</Grid>
+</Window>
