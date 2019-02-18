@@ -12,6 +12,6 @@ namespace Manuel
 		string Title { get; }
 		object Obj { get; set; }
 		INode Parent { get; }
-		ObservableCollection<INode> Children { get; }
+		List<INode> Children { get; }
 	}
 }

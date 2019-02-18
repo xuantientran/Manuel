@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Manuel
 {
-	public class VMHierarchicalDataTempl
+
+	public class VMHierarchicalDataTempl : INotifyPropertyChanged
 	{
 		ObservableCollection<INode> _tags;
+		INode _tag;
 
 		public VMHierarchicalDataTempl()
 		{
@@ -49,6 +53,33 @@ namespace Manuel
 			tagB2.Children.Add(tag);
 		}
 
-		public ObservableCollection<INode> Tags => _tags;
+		public INode Tag
+		{
+			get => _tag;
+			set
+			{
+				_tag = value;
+				RaiseProperChanged();
+			}
+		}
+
+		public ObservableCollection<INode> Tags
+		{
+			get => _tags;
+			set
+			{
+				_tags = value;
+				RaiseProperChanged();
+			}
+		}
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		protected void RaiseProperChanged([CallerMemberName] string propertyName = "")
+		{
+			if (PropertyChanged != null)
+				PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+
 	}
 }

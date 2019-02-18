@@ -1,4 +1,4 @@
-﻿using ITI.DSNTree;
+﻿using ITI.DSNTree.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,6 @@ namespace TestConsole
 	{
 		static void Main(string[] args)
 		{
-			Test.StartAsync();
 			Console.ReadKey();
 		}
 	}

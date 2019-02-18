@@ -6,10 +6,13 @@
         xmlns:local="clr-namespace:WpfTest"
         mc:Ignorable="d"
         Title="HierarchicalDataTempl" Height="450" Width="800">
-	<Grid>
-		<TreeView
-			ItemsSource="{Binding Tags}"
-			>
+	<StackPanel>
+		<TreeView xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      ItemsSource="{Binding Tags}">
+			<i:Interaction.Behaviors>
+				<local:BindableSelectedItemBehavior
+                SelectedItem="{Binding Tag}" />
+			</i:Interaction.Behaviors>
 			<TreeView.ItemTemplate>
 				<HierarchicalDataTemplate
 					ItemsSource="{Binding Children}">
@@ -26,5 +29,7 @@
 				</HierarchicalDataTemplate>
 			</TreeView.ItemTemplate>
 		</TreeView>
-	</Grid>
+		<TextBox Text="{Binding Tag.Title}"/>
+	</StackPanel>
+
 </Window>

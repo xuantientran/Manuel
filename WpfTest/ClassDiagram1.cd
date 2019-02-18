@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Hardcodet.Farms.Model.Farm">
+    <Position X="9.25" Y="1.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAEAAAQAAAAEAAAIEAAACBAAABAAAA=</HashCode>
+      <FileName>Model\Farm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hardcodet.Farms.Model.Person">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAABAAAAEAAAAAAAAAAAAAAAAAAAACAAAAAg=</HashCode>
+      <FileName>Model\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hardcodet.Farms.Model.Plant">
+    <Position X="2" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Plant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hardcodet.Farms.Model.Animal">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Model\Animal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

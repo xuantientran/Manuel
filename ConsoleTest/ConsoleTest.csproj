@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Impl\Impl.csproj" />
+    <ProjectReference Include="..\UnitTests\UnitTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,24 @@
+	<StackPanel>
+		
+		<local:MyTreeView
+			SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+			ItemsSource="{Binding Tags}"
+			>
+			<TreeView.ItemTemplate>
+				<HierarchicalDataTemplate
+					ItemsSource="{Binding Children}">
+					<Grid>
+						<!-- Number of columns -->
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="2*"/>
+						</Grid.ColumnDefinitions>
+						<!-- Controls to use in the treeview grid -->
+						<TextBlock Text="{Binding Title}" Grid.Column="0"/>
+						<TextBlock Text="{Binding Title}" Grid.Column="1"/>
+					</Grid>
+				</HierarchicalDataTemplate>
+			</TreeView.ItemTemplate>
+		</local:MyTreeView>
+		<TextBlock Text="{Binding Tag.Title}"/>
+	</StackPanel>

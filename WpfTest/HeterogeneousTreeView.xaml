@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfTest.HeterogeneousTreeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTest"
+				mc:Ignorable="d"
+        Title="HeterogeneousTreeView" Height="450" Width="800">
+	<Window.Resources>
+		<local:SimpleFolderConverter x:Key="folderConverter" />
+
+		<!-- data template for Farm instances -->
+		<HierarchicalDataTemplate
+      DataType="{x:Type local:Farm}">
+
+			<!-- bind the different data sources -->
+			<HierarchicalDataTemplate.ItemsSource>
+				<MultiBinding
+          Converter="{StaticResource folderConverter}"
+          ConverterParameter=", Animals, Cultivated Plants">
+					<Binding
+            Path="Farmer" />
+					<Binding
+            Path="Animals" />
+					<Binding
+            Path="Crops" />
+				</MultiBinding>
+			</HierarchicalDataTemplate.ItemsSource>
+
+			<TextBlock
+        Text="{Binding Path=FarmName}" />
+		</HierarchicalDataTemplate>
+
+
+		<!-- data template for FolderItem instances -->
+		<HierarchicalDataTemplate DataType="{x:Type local:FolderItem}"
+                              ItemsSource="{Binding Path=Items}">
+			<TextBlock Text="{Binding Path=Name}" />
+		</HierarchicalDataTemplate>
+
+	</Window.Resources>
+
+
+	<!-- the treeview control - sample data is bound through code -->
+	<TreeView x:Name="farmsTree" />
+</Window>

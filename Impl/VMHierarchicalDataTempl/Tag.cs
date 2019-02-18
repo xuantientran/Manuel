@@ -9,7 +9,7 @@ namespace Manuel
 {
 	public class Tag : INode
 	{
-		ObservableCollection<INode> _children;
+		List<INode> _children;
 		string _title;
 		INode _parent;
 		object _obj;
@@ -17,11 +17,11 @@ namespace Manuel
 		{
 			_title = title;
 			_parent = parent;
-			_children = new ObservableCollection<INode>();
+			_children = new List<INode>();
 		}
 		public object Obj { get => _obj; set => _obj = value; }
 		public string Title { get => _title; }
 		public INode Parent { get => _parent; }
-		public ObservableCollection<INode> Children => _children;
+		public List<INode> Children => _children;
 	}
 }

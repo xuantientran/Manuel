@@ -10,4 +10,13 @@
     <PackageReference Include="DiffPlex" Version="1.4.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
 </Project>
