@@ -25,6 +25,7 @@ namespace Manuel
 			_tags = new ObservableCollection<INode>();
 
 			INode tagA = new Tag("A", null);
+			tagA.Documents.Add(new Document { Name = "roman" });
 			_tags.Add(tagA);
 			tagA1 = new Tag("A1", tagA);
 			tagA.Children.Add(tagA1);

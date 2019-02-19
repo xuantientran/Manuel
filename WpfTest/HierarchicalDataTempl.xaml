@@ -6,29 +6,41 @@
         xmlns:local="clr-namespace:WpfTest"
         mc:Ignorable="d"
         Title="HierarchicalDataTempl" Height="450" Width="800">
-	<StackPanel>
-		<local:TreeViewEx
-      ItemsSource="{Binding Tags}"
-			SelectedItem="{Binding Tag, Mode=OneWayToSource}"
-			>
-			
-			<TreeView.ItemTemplate>
-				<HierarchicalDataTemplate
-					ItemsSource="{Binding Children}">
-					<Grid>
-						<!-- Number of columns -->
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="*"/>
-							<ColumnDefinition Width="2*"/>
-						</Grid.ColumnDefinitions>
-						<!-- Controls to use in the treeview grid -->
-						<TextBlock Text="{Binding Title}" Grid.Column="0"/>
-						<TextBlock Text="{Binding Title}" Grid.Column="1"/>
-					</Grid>
-				</HierarchicalDataTemplate>
-			</TreeView.ItemTemplate>
-		</local:TreeViewEx>
-		<TextBox Text="{Binding Tag.Title}"/>
-	</StackPanel>
+	<Window.Resources>
 
+	</Window.Resources>
+	<DockPanel>
+		<StackPanel DockPanel.Dock="Left">
+			<TreeView
+				SelectedItemChanged="Tag_SelectedItemChanged"
+				ItemsSource="{Binding Tags}"
+			>
+				<TreeView.ItemTemplate>
+					<HierarchicalDataTemplate
+					ItemsSource="{Binding Children}">
+						<Grid>
+							<!-- Number of columns -->
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="2*"/>
+							</Grid.ColumnDefinitions>
+							<!-- Controls to use in the treeview grid -->
+							<TextBlock Text="{Binding Title}" Grid.Column="0"/>
+							<TextBlock Text="{Binding Title}" Grid.Column="1"/>
+						</Grid>
+					</HierarchicalDataTemplate>
+				</TreeView.ItemTemplate>
+			</TreeView>
+
+		</StackPanel>
+		<StackPanel DockPanel.Dock="Right">
+			<ListView ItemsSource="{Binding Tag.Documents}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextBlock FontWeight="Bold" Text="{Binding Name}"></TextBlock>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackPanel>
+	</DockPanel>
 </Window>

@@ -27,5 +27,11 @@ namespace WpfTest
 			InitializeComponent();
 			DataContext = _viewModel;
 		}
+
+		private void Tag_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+		{
+			var tag = ((TreeView)sender).SelectedItem;
+			_viewModel.Tag = (Tag)tag;
+		}
 	}
 }

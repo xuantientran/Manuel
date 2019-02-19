@@ -13,5 +13,6 @@ namespace Manuel
 		object Obj { get; set; }
 		INode Parent { get; }
 		List<INode> Children { get; }
+		List<Document> Documents { get; }
 	}
 }
