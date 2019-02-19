@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WpfTest"
         mc:Ignorable="d"
         Title="TreeviewCheckboxes" Height="450" Width="800">
-	<StackPanel>
+<!--
+		<StackPanel>
 
 		<TreeView x:Name="treeView" ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=Families}">
 			<TreeView.Resources>
@@ -53,4 +54,5 @@
 		<TextBlock x:Name="textBoxCrew"/>
 
 	</StackPanel>
+-->
 </Window>

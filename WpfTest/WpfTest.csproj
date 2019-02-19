@@ -59,6 +59,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BindableSelectedItemBehavior.cs" />
+    <Compile Include="TreeViewEx.cs" />
+    <Compile Include="TreeViewHelper.cs" />
+    <Compile Include="TreeViewSelectionBehavior.cs" />
     <Compile Include="DataTemplate.xaml.cs">
       <DependentUpon>DataTemplate.xaml</DependentUpon>
     </Compile>

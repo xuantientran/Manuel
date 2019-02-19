@@ -7,12 +7,11 @@
         mc:Ignorable="d"
         Title="HierarchicalDataTempl" Height="450" Width="800">
 	<StackPanel>
-		<TreeView xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-      ItemsSource="{Binding Tags}">
-			<i:Interaction.Behaviors>
-				<local:BindableSelectedItemBehavior
-                SelectedItem="{Binding Tag}" />
-			</i:Interaction.Behaviors>
+		<local:TreeViewEx
+      ItemsSource="{Binding Tags}"
+			SelectedItem="{Binding Tag, Mode=OneWayToSource}"
+			>
+			
 			<TreeView.ItemTemplate>
 				<HierarchicalDataTemplate
 					ItemsSource="{Binding Children}">
@@ -28,7 +27,7 @@
 					</Grid>
 				</HierarchicalDataTemplate>
 			</TreeView.ItemTemplate>
-		</TreeView>
+		</local:TreeViewEx>
 		<TextBox Text="{Binding Tag.Title}"/>
 	</StackPanel>
 

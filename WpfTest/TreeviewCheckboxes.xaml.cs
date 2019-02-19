@@ -42,7 +42,7 @@ namespace WpfTest
 					if (ItemHelper.GetIsChecked(person) == true)
 						crew += person.Name + ", ";
 			crew = crew.TrimEnd(new char[] { ',', ' ' });
-			this.textBoxCrew.Text = "Your crew: " + crew;
+//			this.textBoxCrew.Text = "Your crew: " + crew;
 		}
 	}
 }
